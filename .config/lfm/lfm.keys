@@ -17,7 +17,7 @@ cursor_goto_file_1char:        A-s
 dir_up:                        left h
 dir_enter:                     right enter l
 #previously g
-goto:                          
+goto:                          n
 bookmark_goto:                 b
 bookmark_set:                  B
 bookmark_select_fromlist:      C-d
@@ -47,8 +47,8 @@ deselect_glob:                 -
 select_invert:                 *
 
 # files
-rename_file:                   2
-view_file:                     3
+rename_file:                   3
+view_file:                     
 edit_file:                     4
 copy_file:                     5
 move_file2:                    6
@@ -57,17 +57,18 @@ delete_file:                   8
 exec_on_file:                  @
 touch_file:                    t
 # previously l
-link_create:                   
-link_edit:                     L
+link_create:                   L
+#previously L
+link_edit:                     
 show_file_info:                i
 
 # general
 find_grep:                     /
 show_tree:                     C-t
-main_menu:                     F9
-file_menu:                     F12
+main_menu:                     1
+file_menu:                     2
 #previously h
-help_menu:                     
+help_menu:                     m
 open_shell:                    C-o
 toggle_powercli:               C-x
 quit_chdir:                    q F10
