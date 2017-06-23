@@ -1,1 +1,21 @@
+# system 
 remap alt-tab to ctrl-space
+#keyboard shortcuts
+open terminal → Edit (on top bar) → Keyboard Shortucts → untick Enable the menu shortcut key (F10)
+open terminal → Edit (on top bar) → Keyboard Shortucts → Shortcut keys: Contents → click and disable
+alt-p music louder
+alt-i music quiter
+alt-p music mute
+alt-k music stop
+alt-l next track
+alt-j previous track
+
+# chromium-browser
+Shortkeys add-on to j k g G vi movement/home/kuba/caps-to-esc.sh
+javascript-blocker
+pocket
+addblock for youtube
+
+# firefox
+similar plugin for vi movement
+
