@@ -40,3 +40,5 @@ function mkdire { mkdir $1 ; cd $1 ;}
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+alias mc='mc -d'

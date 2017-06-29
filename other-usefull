@@ -11,7 +11,8 @@ alt-l next track
 alt-j previous track
 
 # chromium-browser
-Shortkeys add-on to j k g G vi movement/home/kuba/caps-to-esc.sh
+# Shortkeys add-on to j k g G vi movement/home/kuba/caps-to-esc.sh
+vimium
 javascript-blocker
 pocket
 addblock for youtube
