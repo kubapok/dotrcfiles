@@ -171,8 +171,8 @@ MarkToHome = shift-home
 MarkToEnd = shift-end
 
 [listbox]
-Up = up; ctrl-p
-Down = down; ctrl-n
+Up = up; ctrl-p; k
+Down = down; ctrl-n; j
 Top = home; alt-lt; a1
 Bottom = end; alt-gt; c1
 PageUp = pgup; alt-v
