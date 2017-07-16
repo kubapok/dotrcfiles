@@ -95,7 +95,16 @@ set wildmode=list:longest
 				
 set updatetime=250
 
+
+
 set nowrap
+
+function! s:Gowno()
+	set nonu
+endfunction
+com! Gowno call s:Gowno()
+
+
 
 
 highlight CursorLine ctermbg=Black cterm=NONE
@@ -105,4 +114,10 @@ highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
 
 set clipboard=unnamedplus
 
+
+
 set wildignore=*.png,*.PNG,*.svg,*xcf,*.jpg,*.JPG
+
+nmap <leader>d 3dw7x
+map <space> :
+
