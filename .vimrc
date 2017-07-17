@@ -6,7 +6,6 @@ execute pathogen#infect()
 set cursorline
 
 
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -60,8 +59,6 @@ filetype indent plugin on
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-map <C-n> :NERDTreeToggle<CR>
-map <C-m> :TagbarToggle<CR>
 
 
 " żeby sensownie dało się korzystać z airline i odświeżanie
@@ -119,14 +116,25 @@ set clipboard=unnamedplus
 set wildignore=*.png,*.PNG,*.svg,*xcf,*.jpg,*.JPG
 
 nmap <leader>d 3dw7x
-map <space> :
-
-
+nnoremap <space> :
+nnoremap : <nop>
 nnoremap gp `[v`]
 
 vmap <c-h> <gv
 vmap <c-l> >gv
 
-
 vnoremap <c-j> :m '>+1<CR>gv=gv
 vnoremap <c-k> :m '<-2<CR>gv=gv
+
+" nmap <ENTER> o<esc>
+nmap <backspace> dd
+
+nnoremap Q @q
+
+
+noremap <S-l> gt
+noremap <S-h> gT
+
+
+map <c-n> :NERDTreeToggle<CR>
+map <c-m> :TagbarToggle<CR>
