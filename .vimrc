@@ -124,9 +124,9 @@ map <space> :
 
 nnoremap gp `[v`]
 
-vmap <Left> <gv
-vmap <Right> >gv
-vmap <Up> dkP`[v`]
+vmap <c-h> <gv
+vmap <c-l> >gv
 
 
-http://learnvimscriptthehardway.stevelosh.com/chapters/06.html
+vnoremap <c-j> :m '>+1<CR>gv=gv
+vnoremap <c-k> :m '<-2<CR>gv=gv
