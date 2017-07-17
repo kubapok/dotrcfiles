@@ -121,3 +121,12 @@ set wildignore=*.png,*.PNG,*.svg,*xcf,*.jpg,*.JPG
 nmap <leader>d 3dw7x
 map <space> :
 
+
+nnoremap gp `[v`]
+
+vmap <Left> <gv
+vmap <Right> >gv
+vmap <Up> dkP`[v`]
+
+
+http://learnvimscriptthehardway.stevelosh.com/chapters/06.html
