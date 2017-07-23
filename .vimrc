@@ -4,13 +4,11 @@ execute pathogen#infect()
 
 
 set cursorline
-
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
+
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
@@ -22,9 +20,7 @@ let g:syntastic_mode_map = { 'mode': 'passive'}
 command SC SyntasticCheck 
 command SU SyntasticToggleMode
 
-
 set hlsearch
-
 
 let g:syntastic_always_populate_loc_list = 0                                    
 let g:syntastic_auto_loc_list = 0 
@@ -80,54 +76,29 @@ function! s:DiffWithSaved()
 	  com! DiffSaved call s:DiffWithSaved()
 
 
-:highlight LineNr ctermfg=darkgrey
-:highlight CursorLineNr ctermfg=white
 
 vnoremap // y/<C-R>"<CR>
 
 " ustawia we wpisywaniu komend normalnego taba
 set wildmode=list:longest
-
-
 				
 set updatetime=250
-
-
-
 set nowrap
-
-function! s:Gowno()
-	set nonu
-endfunction
-com! Gowno call s:Gowno()
-
-
-
-
-highlight CursorLine ctermbg=Black cterm=NONE
-
-highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
-
 
 set clipboard=unnamedplus
 
-
-
 set wildignore=*.png,*.PNG,*.svg,*xcf,*.jpg,*.JPG
 
-nmap <leader>d 3dw7x
+" nmap <leader>d 3dw7x
 nnoremap <space> :
-nnoremap : <nop>
+" nnoremap : <nop>
 nnoremap gp `[v`]
 
 vmap <c-h> <gv
 vmap <c-l> >gv
 
-vnoremap <c-j> :m '>+1<CR>gv=gv
-vnoremap <c-k> :m '<-2<CR>gv=gv
 
-" nmap <ENTER> o<esc>
-nmap <backspace> dd
+nmap <ENTER> o<esc>
 
 nnoremap Q @q
 
@@ -136,5 +107,23 @@ noremap <S-l> gt
 noremap <S-h> gT
 
 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
 map <c-n> :NERDTreeToggle<CR>
 map <c-m> :TagbarToggle<CR>
+
+syntax on
+
+
+highlight CursorLine ctermbg=Black cterm=NONE
+highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
+highlight LineNr ctermfg=darkgrey 
+
+
+set backspace=indent,eol,start
+
+
