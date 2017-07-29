@@ -127,3 +127,4 @@ highlight LineNr ctermfg=darkgrey
 set backspace=indent,eol,start
 
 
+command TC tabclose 
