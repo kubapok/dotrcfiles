@@ -141,3 +141,12 @@ nnoremap <CR> o <esc>
 154 " remove autocompletion preview
 155 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 156 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+
+
+156 " remove autocompletion preview
+157 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+158 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+159            
+160 command Def execute ":YcmCompleter GoToDefinition"                                                                                                                                 
+161 command Dec execute ":YcmCompleter GoToDeclaration"
