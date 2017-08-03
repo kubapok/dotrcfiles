@@ -136,3 +136,8 @@ nnoremap <c-m> :TagbarToggle <CR>
 
 nnoremap <CR> o <esc>
  
+
+
+154 " remove autocompletion preview
+155 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+156 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
