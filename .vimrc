@@ -5,6 +5,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:ycm_python_binary_path = '/usr/bin/python3' 
+" let g:ycm_python_binary_path = 'python3'
+
+
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
@@ -131,13 +135,16 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-nnoremap <c-n> :NERDTreeToggle <CR>
-nnoremap <c-m> :TagbarToggle <CR>
-
 nnoremap <CR> o <esc>
- 
+nnoremap <c-n> :NERDTreeToggle <CR>
+nmap <c-m> :TagbarToggle <CR>
 
 
-154 " remove autocompletion preview
-155 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-156 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" ---------------------------------------------------------------------------------------------------
+" remove autocompletion preview
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+let g:ycm_python_binary_path = '/usr/bin/python3' 
+let g:ycm_python_binary_path = 'python3'
+" let g:ycm_server_python_interpreter = '/usr/bin/python3'
+ " let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
