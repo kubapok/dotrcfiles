@@ -5,7 +5,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:ycm_python_binary_path = '/usr/bin/python3' 
+let g:ycm_python_binary_path = '/usr/bin/python3'  "YCM BEDZIE DZIALAL dla python3 a nie python2 np urllib.request
 " let g:ycm_python_binary_path = 'python3'
 
 
