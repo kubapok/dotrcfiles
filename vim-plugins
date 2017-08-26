@@ -1,10 +1,12 @@
-nerdcommenter
-nerdtree
-syntastic
-tagbar
-vim-airline
-vim-autoformat
-vim-expand-region
-vim-fugitive
-vim-gitgutter
-youcompleteme
+nerdcommenter #just copy
+nerdtree #just copy
+syntastic # needs flake8 and shellcheck
+tagbar #needs ctags
+vim-airline #just copy
+vim-autoformat #needs autopep8
+vim-expand-region #just copy
+vim-fugitive #just copy
+vim-gitgutter #just copy
+youcompleteme # needs flake8 and autopep8(?)
+vim-better-whitespace # just copy
+vim undotree 

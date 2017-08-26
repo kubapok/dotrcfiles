@@ -5,19 +5,23 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:ycm_python_binary_path = '/usr/bin/python3'  "YCM BEDZIE DZIALAL dla python3 a nie python2 np urllib.request
+let g:ycm_python_binary_path = '/usr/bin/python3'
 " let g:ycm_python_binary_path = 'python3'
 
 
-let g:syntastic_auto_loc_list = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_always_populate_loc_list = 0                                    
-let g:syntastic_auto_loc_list = 0 
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_mode_map = { 'mode': 'passive'}
 
-command SC SyntasticCheck 
+
+
+
+command SC SyntasticCheck
 command SU SyntasticToggleMode
 "
 " Add spaces after comment delimiters by default
@@ -47,20 +51,12 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 
-
 " żeby po instalacji fugigitve belka sie odpaliła trzeba zrobić:
 " :PowerlineClearCache i zrestartować VIMa
 
 syntax on
 
 set backspace=indent,eol,start
-
-
-" command T tabclose
-
-
-
-
 
 
 
@@ -90,7 +86,7 @@ function! s:DiffWithSaved()
 
 " ustawia we wpisywaniu komend normalnego taba
 set wildmode=list:longest
-				
+
 set updatetime=250
 set nowrap
 
@@ -103,8 +99,7 @@ set wildignore=*.png,*.PNG,*.svg,*xcf,*.jpg,*.JPG
 set cursorline
 highlight CursorLine ctermbg=Black cterm=NONE
 highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
-highlight LineNr ctermfg=darkgrey 
-
+highlight LineNr ctermfg=darkgrey
 
 
 
@@ -114,15 +109,12 @@ highlight LineNr ctermfg=darkgrey
 vnoremap // y/<C-R>"<CR>
 " nmap <leader>d 3dw7x
 nnoremap <space> :
-nnoremap :tabclose <CR>
-" nnoremap : <nop>
+vnoremap <space> :
 nnoremap gp `[v`]
 
 vnoremap <c-h> <gv
 vnoremap <c-l> >gv
 
-
-" nnoremap <ENTER> o<esc>
 
 nnoremap Q @q
 
@@ -135,17 +127,33 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-nnoremap <CR> o <esc>
 nnoremap <c-n> :NERDTreeToggle <CR>
-nmap <c-m> :TagbarToggle <CR>
+
 
 " ---------------------------------------------------------------------------------------------------
 " remove autocompletion preview
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-let g:ycm_python_binary_path = '/usr/bin/python3' 
+let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_python_binary_path = 'python3'
-" let g:ycm_server_python_interpreter = '/usr/bin/python3'
-" let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-command Def execute ":YcmCompleter GoToDefinition"                                                                                                                                 
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
+
+
+command Def execute ":YcmCompleter GoToDefinition"
 command Dec execute ":YcmCompleter GoToDeclaration"
+command Ref execute ":YcmCompleter GoToReferences"
+
+
+
+
+
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+
+command Nazwa execute ":!echo $(pwd -P)/%"
+
+nnoremap <leader>t :TagbarToggle <CR>
+nnoremap <leader>u :UndotreeToggle <CR>
+nnoremap <leader>f :YcmCompleter FixIt<CR>
+
