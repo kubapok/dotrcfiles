@@ -153,8 +153,20 @@ command Nazwa execute ":!echo $(pwd -P)/%"
 nnoremap <leader>t :TagbarToggle <CR>
 nnoremap <leader>u :UndotreeToggle <CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
+nnoremap <leader>c <plug>NerdCommenterToggle
 
 set clipboard=unnamedplus
 au Filetype python nnoremap <leader>g oimport pdb; pdb.set_trace()<esc>
 
 map <space> <Plug>(easymotion-prefix)
+
+" CamelCaseSerNik
+
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
