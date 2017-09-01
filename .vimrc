@@ -90,7 +90,6 @@ set wildmode=list:longest
 set updatetime=250
 set nowrap
 
-set clipboard=unnamedplus
 
 set wildignore=*.png,*.PNG,*.svg,*xcf,*.jpg,*.JPG
 
@@ -108,19 +107,17 @@ highlight LineNr ctermfg=darkgrey
 
 vnoremap // y/<C-R>"<CR>
 " nmap <leader>d 3dw7x
-nnoremap <space> :
-vnoremap <space> :
 nnoremap gp `[v`]
 
-vnoremap <c-h> <gv
-vnoremap <c-l> >gv
+vnoremap <S-h> <gv
+vnoremap <S-l> >gv
 
 
 nnoremap Q @q
 
-noremap <S-l> gt
-noremap <S-h> gT
-noremap <S-k> :tabclose<CR>
+nnoremap <S-l> gt
+nnoremap <S-h> gT
+nnoremap <S-k> :tabclose<CR>
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -157,3 +154,7 @@ nnoremap <leader>t :TagbarToggle <CR>
 nnoremap <leader>u :UndotreeToggle <CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
 
+set clipboard=unnamedplus
+au Filetype python nnoremap <leader>g oimport pdb; pdb.set_trace()<esc>
+
+map <space> <Plug>(easymotion-prefix)
