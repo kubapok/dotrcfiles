@@ -111,6 +111,8 @@ nnoremap gp `[v`]
 
 vnoremap <S-h> <gv
 vnoremap <S-l> >gv
+vnoremap <S-j> :m '>+1<CR>gv=gv
+vnoremap <S-k> :m '<-2<CR>gv=gv
 
 
 nnoremap Q @q
@@ -170,3 +172,5 @@ sunmap w
 sunmap b
 sunmap e
 sunmap ge
+
+
