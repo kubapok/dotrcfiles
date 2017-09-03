@@ -6,7 +6,6 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:ycm_python_binary_path = '/usr/bin/python3'
-" let g:ycm_python_binary_path = 'python3'
 
 
 set statusline+=%#warningmsg#
@@ -17,8 +16,6 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-
 
 
 command SC SyntasticCheck
@@ -136,12 +133,11 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_python_binary_path = 'python3'
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-
+j
 
 
 command Def execute ":YcmCompleter GoToDefinition"
 command Dec execute ":YcmCompleter GoToDeclaration"
-command Ref execute ":YcmCompleter GoToReferences"
 
 
 
@@ -155,12 +151,11 @@ command Nazwa execute ":!echo $(pwd -P)/%"
 nnoremap <leader>t :TagbarToggle <CR>
 nnoremap <leader>u :UndotreeToggle <CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
-nnoremap <leader>c <plug>NerdCommenterToggle
+vnoremap <leader>f :YcmCompleter FixIt<CR>
 
 set clipboard=unnamedplus
 au Filetype python nnoremap <leader>g oimport pdb; pdb.set_trace()<esc>
 
-map <space> <Plug>(easymotion-prefix)
 
 " CamelCaseSerNik
 
@@ -173,4 +168,28 @@ sunmap b
 sunmap e
 sunmap ge
 
+map <space>l <Plug>(easymotion-lineforward)
+map <space>h <Plug>(easymotion-linebackward)
 
+
+
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to
+" EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
+" zrobić że na enter otwiera się markdow
+
+
+" pozwala się ruszać sensownie w command line
+cnoremap <c-h> <left>
+cnoremap <c-j> <down>
+cnoremap <c-k> <up>
+cnoremap <c-l> <right>
+cnoremap ^     <home>
+cnoremap $     <end>
