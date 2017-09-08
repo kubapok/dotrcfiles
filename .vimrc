@@ -138,6 +138,7 @@ j
 
 command Def execute ":YcmCompleter GoToDefinition"
 command Dec execute ":YcmCompleter GoToDeclaration"
+command Ref execute ":YcmCompleter GoToReferences"
 
 
 
@@ -170,6 +171,7 @@ sunmap ge
 
 map <space>l <Plug>(easymotion-lineforward)
 map <space>h <Plug>(easymotion-linebackward)
+map <space> <Plug>(easymotion-prefix)
 
 
 
@@ -191,5 +193,10 @@ cnoremap <c-h> <left>
 cnoremap <c-j> <down>
 cnoremap <c-k> <up>
 cnoremap <c-l> <right>
-cnoremap ^     <home>
-cnoremap $     <end>
+
+
+au Filetype markdown nnoremap <CR> :w<CR>:! pandoc % -o  %:r.pdf <CR> <CR>
+au Filetype markdown setlocal spell spelllang=pl
+
+
+let g:vim_markdown_folding_style_pythonic = 1
