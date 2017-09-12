@@ -1,8 +1,12 @@
+ack.vim
 CamelCaseMotion
 ctrlp.vim
+gv.vim
 nerdcommenter
 nerdtree
+nerdtree-git-plugin
 syntastic
+tabular
 tagbar
 undotree
 vim-airline
@@ -17,5 +21,3 @@ vim-markdown
 vim-repeat
 vimtex
 YouCompleteMe
-nerdtree-git-plugin
-ack.vim
