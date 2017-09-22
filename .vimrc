@@ -182,8 +182,8 @@ omap / <Plug>(easymotion-tn)
 " EasyMotion.
 " Without these mappings, `n` & `N` works fine. (These mappings just provide
 " different highlight method and have some other features )
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
+" map  n <Plug>(easymotion-next)
+" map  N <Plug>(easymotion-prev)
 
 " zrobić że na enter otwiera się markdow
 
@@ -201,3 +201,13 @@ au Filetype markdown setlocal spell spelllang=pl,en_us
 
 
 let g:vim_markdown_folding_style_pythonic = 1
+
+command Test split %:p:h/test_%:t
+
+nnoremap <leader>sv :source $MYVIMRC<CR> 
+
+
+
+nmap <space> <Plug>(easymotion-overwin-f)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)

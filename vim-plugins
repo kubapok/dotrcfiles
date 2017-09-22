@@ -18,6 +18,7 @@ vim-fugitive
 vim-gitgutterit fd4fa5bed7a306aea758c4cb8c77e7c6e12000b9
 vim-indent-guides
 vim-markdown
+vim-nerdtree-tabs
 vim-repeat
 vimtex
 YouCompleteMe
