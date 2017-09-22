@@ -211,3 +211,5 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 nmap <space> <Plug>(easymotion-overwin-f)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+nnoremap <leader>p gp<ESC>
