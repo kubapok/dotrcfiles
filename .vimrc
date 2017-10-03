@@ -57,8 +57,17 @@ set backspace=indent,eol,start
 
 
 
+" remove autocompletion preview
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:ycm_python_binary_path = 'python3'
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
-" NIE WYCZKI############################################################################################
+
+
+
+
 set number
 colo elflord
 set hlsearch
@@ -99,65 +108,22 @@ highlight LineNr ctermfg=darkgrey
 
 
 
-
-" SKRÓTY KLAWISZOWE ##################################################################################
-
-vnoremap // y/<C-R>"<CR>
-" nmap <leader>d 3dw7x
-nnoremap gp `[v`]
-
-vnoremap <S-h> <gv
-vnoremap <S-l> >gv
-vnoremap <S-j> :m '>+1<CR>gv=gv
-vnoremap <S-k> :m '<-2<CR>gv=gv
-
-
-nnoremap Q @q
-
-nnoremap <S-l> gt
-nnoremap <S-h> gT
-nnoremap <S-k> :tabclose<CR>
-
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-nnoremap <c-n> :NERDTreeToggle <CR>
-
-
-" ---------------------------------------------------------------------------------------------------
-" remove autocompletion preview
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-let g:ycm_python_binary_path = '/usr/bin/python3'
-let g:ycm_python_binary_path = 'python3'
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-j
-
-
-command Def execute ":YcmCompleter GoToDefinition"
-command Dec execute ":YcmCompleter GoToDeclaration"
-command Ref execute ":YcmCompleter GoToReferences"
-
-
-
-
-
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
-command Nazwa execute ":!echo %:p"
-
-nnoremap <leader>t :TagbarToggle <CR>
-nnoremap <leader>u :UndotreeToggle <CR>
-nnoremap <leader>f :YcmCompleter FixIt<CR>
-vnoremap <leader>f :YcmCompleter FixIt<CR>
-
-set clipboard=unnamedplus
-au Filetype python nnoremap <leader>g oimport pdb; pdb.set_trace()<esc>
 
 
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to
+" EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+" map  n <Plug>(easymotion-next)
+" map  N <Plug>(easymotion-prev)
+" u
+"
+"
+"
+"
 " CamelCaseSerNik
 
 map <silent> w <Plug>CamelCaseMotion_w
@@ -169,23 +135,42 @@ sunmap b
 sunmap e
 sunmap ge
 
-map <space>l <Plug>(easymotion-lineforward)
-map <space>h <Plug>(easymotion-linebackward)
-map <space> <Plug>(easymotion-prefix)
 
 
+set clipboard=unnamedplus
 
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
 
-" These `n` & `N` mappings are options. You do not have to map `n` & `N` to
-" EasyMotion.
-" Without these mappings, `n` & `N` works fine. (These mappings just provide
-" different highlight method and have some other features )
-" map  n <Plug>(easymotion-next)
-" map  N <Plug>(easymotion-prev)
+" au Filetype markdown nnoremap <CR> :w<CR>:! pandoc --toc -V lang=pl % -o  %:r.pdf <CR> <CR>
+au Filetype markdown nnoremap <CR> :w<CR>:! make  <CR> <CR>
+au Filetype markdown setlocal spell spelllang=pl,en_us
 
-" zrobić że na enter otwiera się markdow
+nmap <space> <Plug>(easymotion-overwin-f)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+" SKRÓTY KLAWISZOWE ##################################################################################
+
+
+" LEADER
+au Filetype python nnoremap <leader>g oimport pdb; pdb.set_trace()<esc>
+nnoremap <leader>p `[v`]
+nnoremap <leader>t :TagbarToggle <CR>
+nnoremap <leader>u :UndotreeToggle <CR>
+nnoremap <leader>f :YcmCompleter FixIt<CR>
+vnoremap <leader>f :YcmCompleter FixIt<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+" nnoremap <leader>p gp<ESC>
+
+
+"SKAKANIE MIEDZY OKNAMI I TABAMI
+nnoremap <S-l> gt
+nnoremap <S-h> gT
+nnoremap <S-k> :tabclose<CR>
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 
 " pozwala się ruszać sensownie w command line
@@ -195,21 +180,40 @@ cnoremap <c-k> <up>
 cnoremap <c-l> <right>
 
 
-" au Filetype markdown nnoremap <CR> :w<CR>:! pandoc --toc -V lang=pl % -o  %:r.pdf <CR> <CR>
-au Filetype markdown nnoremap <CR> :w<CR>:! make  <CR> <CR>
-au Filetype markdown setlocal spell spelllang=pl,en_us
+"PRZEMIESZCZANIE ZAZNACZONEGO TEKSTU
+vnoremap <S-h> <gv
+vnoremap <S-l> >gv
+vnoremap <S-j> :m '>+1<CR>gv=gv
+vnoremap <S-k> :m '<-2<CR>gv=gv
+
+
+
+
+vnoremap // y/<C-R>"<CR>
+
+nnoremap Q @q
+
+
+nnoremap <c-n> :NERDTreeToggle <CR>
+command Def execute ":YcmCompleter GoToDefinition"
+command Dec execute ":YcmCompleter GoToDeclaration"
+command Ref execute ":YcmCompleter GoToReferences"
+
+command Nazwa execute ":!echo %:p"
+
+
+
+map <space>l <Plug>(easymotion-lineforward)
+map <space>h <Plug>(easymotion-linebackward)
+map <space> <Plug>(easymotion-prefix)
+
+
+
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
 
 
 let g:vim_markdown_folding_style_pythonic = 1
 
 command Test split %:p:h/test_%:t
 
-nnoremap <leader>sv :source $MYVIMRC<CR> 
-
-
-
-nmap <space> <Plug>(easymotion-overwin-f)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-
-nnoremap <leader>p gp<ESC>
