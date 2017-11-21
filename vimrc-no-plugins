@@ -1,0 +1,16 @@
+set -o vi
+alias mc="mc -d"
+alias vim="vim -u /home/j.pokrywka/.vimrcszuba"
+
+
+tardateone() { param=`echo $1 | sed 's/\/$//g'` ; tar zcf $param-`date +%Y%m%d`.tar.gz $param ; }
+tardate() { for var in "$@" ; do tardateone "$var" ; echo "$var" done  ; done }
+tardate-all-dirs() { for var in * ; do [ -d "$var" ] && tardateone "$var" ; echo "$var" done  ; done }
+md5one() { param=$1 ;  md5sum $param > $param.md5 ;}
+md5() { for var in "$@" ; do md5one "$var" ; echo "$var" done  ; done }
+md5-all-gz() { for var in *tar.gz  ; do md5one "$var" ; echo "$var" done  ; done }
+
+
+
+pokaz() { echo $(pwd -P)/$1 ; }
+prettyJSON() { cat $1 | python -m json.tool ; }
