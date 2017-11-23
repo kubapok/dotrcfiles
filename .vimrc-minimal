@@ -1,0 +1,87 @@
+set nocompatible
+syntax on
+colo elflord
+set number
+
+command Pokaz echo expand ('%:p')
+
+
+highlight CursorLine ctermbg=Black cterm=NONE
+ 
+set cursorline
+
+set hlsearch
+
+map <ESC>[1;5D <C-Left>
+map <ESC>[1;5C <C-Right>
+
+
+imap <ESC>[1;5D <C-Left>
+imap <ESC>[1;5C <C-Right>
+
+
+
+au Filetype python setl et ts=4 sw=4 softtabstop=4
+
+" madre ustawianie autowciec
+filetype indent plugin on
+
+
+
+function! s:DiffWithSaved()
+	  let filetype=&ft
+	    diffthis
+	      vnew | r # | normal! 1Gdd
+	        diffthis
+		  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+	  endfunction
+	  com! DiffSaved call s:DiffWithSaved()
+
+
+:highlight LineNr ctermfg=darkgrey
+:highlight CursorLineNr ctermfg=white
+
+
+set laststatus=2
+set ttimeoutlen=50
+
+
+
+set wildmode=list:longest      
+" set wildmode
+set updatetime=250 
+
+set nowrap
+
+
+vnoremap // y/<C-R>"<CR>
+" nmap <leader>d 3dw7x
+nnoremap :tabclose <CR>
+" nnoremap : <nop>
+nnoremap gp `[v`]
+
+vnoremap <S-h> <gv
+vnoremap <S-l> >gv
+
+
+nnoremap Q @q
+
+
+
+
+cnoremap <c-h> <left>
+cnoremap <c-j> <down>
+cnoremap <c-k> <up>
+cnoremap <c-l> <right>
+
+nnoremap <S-l> gt
+nnoremap <S-h> gT
+nnoremap <S-k> :tabclose<CR>
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
+set backspace=indent,eol,start
