@@ -25,3 +25,8 @@ similar plugin for vi movement
 options → layout → disable command prompt
 options → panel options → lynx like motion
 options → Appererance → modarin256
+
+
+#conf
+install cuda
+install numpy compiled with cuda
