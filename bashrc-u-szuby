@@ -1,0 +1,2 @@
+if [ "$KUBARC" == KUBARC ] ; then kubarc ; fi
+kubarc() {KUBARC=KUBARC ; source /home/j.pokrywka/.kubarc;}
