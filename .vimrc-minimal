@@ -27,7 +27,6 @@ au Filetype python setl et ts=4 sw=4 softtabstop=4
 filetype indent plugin on
 
 
-
 function! s:DiffWithSaved()
 	  let filetype=&ft
 	    diffthis

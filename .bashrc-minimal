@@ -11,6 +11,5 @@ md5() { for var in "$@" ; do md5one "$var" ; echo "$var" done  ; done }
 md5-all-gz() { for var in *tar.gz  ; do md5one "$var" ; echo "$var" done  ; done }
 
 
-
 pokaz() { echo $(pwd -P)/$1 ; }
 prettyJSON() { cat $1 | python -m json.tool ; }
