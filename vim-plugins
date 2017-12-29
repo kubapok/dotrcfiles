@@ -1,19 +1,19 @@
 ack.vim
 CamelCaseMotion
 ctrlp.vim
-gv.vim
+gv.vim # pozwala ogladac ladnie commity
 nerdcommenter
 nerdtree
 nerdtree-git-plugin
 syntastic
-tabular
-tagbar
+tabular # robi text alingment, np jakbym chciał robić tabelkę
+tagbar # tagi z prawej strony
 undotree
 vim-airline
 vim-autoformat
 vim-better-whitespace
 vim-easymotion
-vim-expand-region
+vim-expand-regio # naciska sie + w visual mode i zwieksza zaznaczenien
 vim-fugitive
 vim-gitgutterit fd4fa5bed7a306aea758c4cb8c77e7c6e12000b9
 vim-indent-guides

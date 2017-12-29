@@ -1,2 +1,2 @@
-if [ "$KUBARC" == KUBARC ] ; then kubarc ; fi
-kubarc() {KUBARC=KUBARC ; source /home/j.pokrywka/.kubarc;}
+if [ "$KUBARC" == KUBARC_SET_ON ] ; then kubarc ; fi
+kubarc() {KUBARC=KUBARC_SET_ON ; source /home/j.pokrywka/.kubarc;}
