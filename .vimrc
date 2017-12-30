@@ -16,6 +16,8 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_perl_checkers = [ 'perl' ]
 
 
 command SC SyntasticCheck
@@ -143,15 +145,19 @@ set clipboard=unnamedplus
 " au Filetype markdown nnoremap <CR> :w<CR>:! pandoc --toc -V lang=pl % -o  %:r.pdf <CR> <CR>
 au Filetype markdown nnoremap <CR> :w<CR>:! make  <CR> <CR>
 au Filetype markdown setlocal spell spelllang=pl,en_us
+au Filetype latex setlocal spell spelllang=pl,en_us
 
-nmap <space> <Plug>(easymotion-overwin-f)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+map <space> <Plug>(easymotion-prefix)
+map <space>l <Plug>(easymotion-lineforward)
+map <space>h <Plug>(easymotion-linebackward)
+map <space>j <Plug>(easymotion-j)
+map <space>k <Plug>(easymotion-k)
+map  <Leader>f <Plug>(easymotion-bd-f)
 " SKRÓTY KLAWISZOWE ##################################################################################
 
 
 " LEADER
-au Filetype python nnoremap <leader>g oimport pdb; pdb.set_trace()<esc>
+au Filetype python nnoremap <leader>g ofrom IPython import embed; embed()<esc>
 nnoremap <leader>p `[v`]
 nnoremap <leader>t :TagbarToggle <CR>
 nnoremap <leader>u :UndotreeToggle <CR>
@@ -199,13 +205,11 @@ command Def execute ":YcmCompleter GoToDefinition"
 command Dec execute ":YcmCompleter GoToDeclaration"
 command Ref execute ":YcmCompleter GoToReferences"
 
-command Nazwa execute ":!echo %:p"
+command Pokaz execute ":!echo %:p"
 
 
 
-map <space>l <Plug>(easymotion-lineforward)
-map <space>h <Plug>(easymotion-linebackward)
-map <space> <Plug>(easymotion-prefix)
+map <space> <Plug>(easymotion-s)
 
 
 
