@@ -192,6 +192,9 @@ vnoremap <S-l> >gv
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 
+nnoremap <Up> :res +1<CR>
+nnoremap <Down> :res -1<CR>
+
 
 
 
