@@ -3,12 +3,10 @@ remap alt-tab to ctrl-space
 #keyboard shortcuts
 open terminal → Edit (on top bar) → Keyboard Shortucts → untick Enable the menu shortcut key (F10)
 open terminal → Edit (on top bar) → Keyboard Shortucts → Shortcut keys: Contents → click and disable
-alt-p music louder
-alt-i music quiter
-alt-p music mute
-alt-k music stop
-alt-l next track
-alt-j previous track
+ctrl-f11 music louder
+ctrl-f9  music quiter
+ctrl-f10 music mute
+ctrl-f12 music stop
 
 # chromium-browser
 # Shortkeys add-on to j k g G vi movement/home/kuba/caps-to-esc.sh
@@ -22,11 +20,15 @@ similar plugin for vi movement
 
 
 #mc
-options → layout → disable command prompt
 options → panel options → lynx like motion
 options → Appererance → modarin256
+delete hint status bar
 
 
 #conf
 install cuda
 install numpy compiled with cuda
+
+#
+w terminalu:
+edit- Keyborad shortucts→ odznaczyć enable alt-costam
