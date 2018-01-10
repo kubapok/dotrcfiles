@@ -147,7 +147,7 @@ alias open='xdg-open'
 0
 I prefer reading man pages in vi, so I have the following in my .profile or .bashrc file
 
-man () {
+manv () {
     sought=$*
     /usr/bin/man $sought | col -b | vim -R -c "set nonumber" -c "set syntax=man"  -
 }
