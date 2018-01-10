@@ -224,3 +224,4 @@ let g:vim_markdown_folding_style_pythonic = 1
 
 command Test split %:p:h/test_%:t
 
+command JSON execute ":%!python -m json.tool"
