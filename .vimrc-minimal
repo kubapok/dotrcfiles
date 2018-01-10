@@ -82,6 +82,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+nnoremap <Up> :res +1<CR>                                                                                                                                                              
+nnoremap <Down> :res -1<CR>
 
 set backspace=indent,eol,start
 
