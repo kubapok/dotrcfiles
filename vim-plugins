@@ -2,7 +2,6 @@ ack.vim
 CamelCaseMotion
 ctrlp.vim
 gv.vim
-nerdcommenter
 nerdtree
 nerdtree-git-plugin
 syntastic
@@ -12,6 +11,7 @@ undotree
 vim-airline
 vim-autoformat
 vim-better-whitespace
+vim-commentary
 vim-easymotion
 vim-expand-region
 vim-fugitive

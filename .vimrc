@@ -23,25 +23,6 @@ let g:syntastic_perl_checkers = [ 'perl' ]
 command SC SyntasticCheck
 command SU SyntasticToggleMode
 "
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-
-" Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
-
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
 
 
 " włącza NERDTree jeśli nie podam nazwypliku
@@ -162,9 +143,6 @@ nnoremap <leader>p `[v`]
 nnoremap <leader>t :TagbarToggle <CR>
 nnoremap <leader>u :UndotreeToggle <CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
-vnoremap <leader>f :YcmCompleter FixIt<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
 " nnoremap <leader>p gp<ESC>
 
 
@@ -192,8 +170,8 @@ vnoremap <S-l> >gv
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 
-nnoremap <Right> :res +1<CR>
-nnoremap <Left> :res -1<CR>
+nnoremap <Up> :res +1<CR>
+nnoremap <Down> :res -1<CR>
 
 
 
@@ -212,6 +190,10 @@ command Pokaz execute ":!echo %:p"
 
 
 
+
+
+
+
 map <space> <Plug>(easymotion-s)
 
 
@@ -224,4 +206,49 @@ let g:vim_markdown_folding_style_pythonic = 1
 
 command Test split %:p:h/test_%:t
 
+
+
+" Code from:
+" http://stackoverflow.com/questions/5585129/pasting-code-into-terminal-window-into-vim-on-mac-os-x
+" then https://coderwall.com/p/if9mda
+" and then https://github.com/aaronjensen/vimfiles/blob/59a7019b1f2d08c70c28a41ef4e2612470ea0549/plugin/terminaltweaks.vim
+" to fix the escape time problem with insert mode.
+"
+" Docs on bracketed paste mode:
+" http://www.xfree86.org/current/ctlseqs.html
+" Docs on mapping fast escape codes in vim
+" http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
+
+if exists("g:loaded_bracketed_paste")
+  finish
+endif
+let g:loaded_bracketed_paste = 1
+
+let &t_ti .= "\<Esc>[?2004h"
+let &t_te .= "\<Esc>[?2004l"
+
+function! XTermPasteBegin(ret)
+  set pastetoggle=<f29>
+  set paste
+  return a:ret
+endfunction
+
+execute "set <f28>=\<Esc>[200~"
+execute "set <f29>=\<Esc>[201~"
+map <expr> <f28> XTermPasteBegin("i")
+imap <expr> <f28> XTermPasteBegin("")
+vmap <expr> <f28> XTermPasteBegin("c")
+cmap <f28> <nop>
+cmap <f29> <nop>
+" END OF PLUGIN
+
+
+
+
 command JSON execute ":%!python -m json.tool"
+set scrolloff=2
+nnoremap <Right> :res +1<CR>
+nnoremap <Left> :res -1<CR>
+nnoremap <leader>r :reg<CR>
+command ReloadMYVIMRC execute ":so $MYVIMRC"
+

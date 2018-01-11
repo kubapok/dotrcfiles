@@ -32,3 +32,6 @@ install numpy compiled with cuda
 #
 w terminalu:
 edit- Keyborad shortucts→ odznaczyć enable alt-costam
+
+# latex
+texlive-latex-base
