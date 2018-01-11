@@ -139,11 +139,6 @@ map  <Leader>f <Plug>(easymotion-bd-f)
 
 " LEADER
 au Filetype python nnoremap <leader>g ofrom IPython import embed; embed()<esc>
-nnoremap <leader>p `[v`]
-nnoremap <leader>t :TagbarToggle <CR>
-nnoremap <leader>u :UndotreeToggle <CR>
-nnoremap <leader>f :YcmCompleter FixIt<CR>
-" nnoremap <leader>p gp<ESC>
 
 
 "SKAKANIE MIEDZY OKNAMI I TABAMI
@@ -243,12 +238,21 @@ cmap <f29> <nop>
 " END OF PLUGIN
 
 
+nnoremap <leader>p `[v`]
+nnoremap <leader>t :TagbarToggle <CR>
+nnoremap <leader>u :UndotreeToggle <CR>
+nnoremap <leader>f :YcmCompleter FixIt<CR>
+" nnoremap <leader>p gp<ESC>
 
 
 command JSON execute ":%!python -m json.tool"
 set scrolloff=2
-nnoremap <Right> :res +1<CR>
-nnoremap <Left> :res -1<CR>
+nnoremap <Up> :res +1<CR>
+nnoremap <Down> :res -1<CR>
+nnoremap <Left> :vertical resize -1<CR>
+nnoremap <Right> :vertical resize +1<CR>
 nnoremap <leader>r :reg<CR>
+nnoremap <leader>b :buffers<CR>
+nnoremap <Tab> :bnext<CR>
 command ReloadMYVIMRC execute ":so $MYVIMRC"
 
