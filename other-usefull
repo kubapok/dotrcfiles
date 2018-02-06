@@ -42,3 +42,9 @@ texlive-latex-base
 ranger # ale zainstalowany przez make z:
 https://github.com/ranger/ranger
 ( i wcześniej wybrać sobie jakie doinstalować biblioteki żeby np miec podglad tar albo pdf)
+
+
+#
+fzf
+wjeść w /home/j.pokrywka/.fzf/shell/key-bindings.bash
+i wywalić wszystko z _cd_
