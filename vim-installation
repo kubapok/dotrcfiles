@@ -1,3 +1,30 @@
+najlepiej zrobić configure z paramatetrem huge oraz python3 (nie robić pythona 2 w ogóle, bo są konflikty), sprawdzić czy jest:
+
 python3
 client-server
 (clipboard)
+
+następnie:
+
+vim-tags  
+lintery: flake8,shellcheck
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
