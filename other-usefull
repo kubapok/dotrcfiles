@@ -9,6 +9,7 @@ ctrl-q zamiast alt-f4
 #keyboard shortcuts
 open terminal → Edit (on top bar) → Keyboard Shortucts → untick Enable the menu shortcut key (F10)
 open terminal → Edit (on top bar) → Keyboard Shortucts → Shortcut keys: Contents → click and disable 
+w terminalu zrobic shortcut ctrl alt i na zmiane nazwy okna
 
 # chromium-browser
 # Shortkeys add-on to j k g G vi movement/home/kuba/caps-to-esc.sh
