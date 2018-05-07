@@ -1,12 +1,15 @@
 # system 
 remap alt-tab to ctrl-space
-#keyboard shortcuts
-open terminal → Edit (on top bar) → Keyboard Shortucts → untick Enable the menu shortcut key (F10)
-open terminal → Edit (on top bar) → Keyboard Shortucts → Shortcut keys: Contents → click and disable
 ctrl-f11 music louder
 ctrl-f9  music quiter
 ctrl-f10 music mute
 ctrl-f12 music stop
+ctrl-q zamiast alt-f4
+
+#keyboard shortcuts
+open terminal → Edit (on top bar) → Keyboard Shortucts → untick Enable the menu shortcut key (F10)
+open terminal → Edit (on top bar) → Keyboard Shortucts → Shortcut keys: Contents → click and disable 
+w terminalu zrobic shortcut ctrl alt i na zmiane nazwy okna
 
 # chromium-browser
 # Shortkeys add-on to j k g G vi movement/home/kuba/caps-to-esc.sh
@@ -29,9 +32,6 @@ delete hint status bar
 install cuda
 install numpy compiled with cuda
 
-#
-w terminalu:
-edit- Keyborad shortucts→ odznaczyć enable alt-costam
 
 # latex
 texlive-latex-base
