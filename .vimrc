@@ -239,6 +239,7 @@ cmap <f29> <nop>
 
 
 nnoremap <leader>p `[v`]
+nnoremap <leader>a :Autoformat <CR>
 nnoremap <leader>t :TagbarToggle <CR>
 nnoremap <leader>u :UndotreeToggle <CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
@@ -252,7 +253,9 @@ nnoremap <Down> :res -1<CR>
 nnoremap <Left> :vertical resize -1<CR>
 nnoremap <Right> :vertical resize +1<CR>
 nnoremap <leader>r :reg<CR>
+nnoremap <leader>h :noh<CR>
 nnoremap <leader>b :buffers<CR>
 nnoremap <Tab> :bnext<CR>
 command ReloadMYVIMRC execute ":so $MYVIMRC"
-
+set nobackup
+set noswapfile

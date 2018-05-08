@@ -7,7 +7,6 @@ case $- in
     *i*) ;;
       *) return;;
 esac
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -125,10 +124,7 @@ if [ -x /usr/bin/mint-fortune ]; then
 fi
 [ -r /home/kuba/.byobu/prompt ] && . /home/kuba/.byobu/prompt   #byobu-prompt#
 
-
-
-
-
+alias copy='xclip -selection clipboard'
 
 alias mc='mc -d'
 
@@ -136,18 +132,42 @@ alias lt="ls -lt"
 function mkdire { mkdir $1 ; cd $1 ;}
 export VISUAL=vim
 export EDITOR="$VISUAL"
-mkdire () { mkdir $1 && cd $1 ; }
 
 set -o vi
 
 
 
 alias open='xdg-open'
+alias vimrc='vim ~/.vimrc'
 
-0
-I prefer reading man pages in vi, so I have the following in my .profile or .bashrc file
+PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+PATH=$PATH:~/bin
+LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
+
+function _update_ps1() {
+	    PS1="$(~/powerline-shell/powerline-shell.py --cwd-mode plain $? 2> /dev/null)"
+    }
+
+if [ "$TERM" != "linux" ]; then
+	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
+
+alias g="git"
+
+
+gm() { git add --all ; git commit -m 'a'; git push; }
+pokaz() { echo $(pwd -P)/$1 ; }
 manv () {
     sought=$*
     /usr/bin/man $sought | col -b | vim -R -c "set nonumber" -c "set syntax=man"  -
 }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
+
+export PATH=$PATH:/usr/local/spark/bin
