@@ -4,7 +4,7 @@ ctrl-f11 music louder
 ctrl-f9  music quiter
 ctrl-f10 music mute
 ctrl-f12 music stop
-ctrl-q zamiast alt-f4
+ctrl-e zamiast alt-f4
 
 #keyboard shortcuts
 open terminal → Edit (on top bar) → Keyboard Shortucts → untick Enable the menu shortcut key (F10)
@@ -46,5 +46,7 @@ https://github.com/ranger/ranger
 
 #
 fzf
+przy instalacji nie zgadzać się na keybindings
+albo:
 wjeść w /home/j.pokrywka/.fzf/shell/key-bindings.bash
 i wywalić wszystko z _cd_
