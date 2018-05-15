@@ -2,29 +2,27 @@ najlepiej zrobić configure z paramatetrem huge oraz python3 (nie robić pythona
 
 python3
 client-server
-(clipboard)
-
 następnie:
 
-vim-tags  
+
+
+
+skopiować wszysztkie pluginy
+zainstalować 
+vim-tags (tagbar)
 lintery: flake8,shellcheck
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+youcompleteme (tam trzeba w instrukcji ycmd install)
+
+
+
+instrukcja:
+https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
+https://superuser.com/questions/235505/compiling-vim-with-xterm-clipboard-support
+
+sudo apt-get install vim-nox
+SPRAWDZIĆ KONIECZNIE GDZIE JEST python3-config-dir (może byc w anacondzie np) # można spróbowąc też z python2 ale niekoniecznie
+./configure --enable-multibyte --enable-rubyinterp=yes --enable-python3interp=yes --with-python3-config-dir=/usr/lib/python3.5/config  --enable-perlinterp=yes --enable-luainterp=yes --enable-gui=gtk2 --enable-cscope  --prefix=/usr/local --with-features=normal --enable-gui --with-x 
+make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
+sudo apt install checkinstall
+
+
