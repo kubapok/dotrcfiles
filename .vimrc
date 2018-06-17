@@ -1,4 +1,5 @@
 " wtyczki ##########################################################################################
+set nocp
 execute pathogen#infect()
 
 set statusline+=%#warningmsg#
