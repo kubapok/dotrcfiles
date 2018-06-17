@@ -97,8 +97,8 @@ au Filetype latex setlocal spell spelllang=pl,en_us
 " nnoremap <C-k> <C-W><C-K>
 nnoremap <C-h> gT
 nnoremap <C-l> gt
-nnoremap <C-k> :tabclose <CR>
-nnoremap <C-j> :tabnew <CR>
+" nnoremap <C-k> :tabclose <CR>
+" nnoremap <C-j> :tabnew <CR>
 
 
 " pozwala się ruszać sensownie w command line vimowym
@@ -154,23 +154,32 @@ cmap <f29> <nop>
 
 au Filetype python nnoremap <leader>g ofrom IPython import embed; embed()<esc>
 nnoremap <leader>p `[v`]
-nnoremap <leader>a :Autoformat <CR>
+nnoremap <leader>r :Autoformat <CR>
+" nnoremap <leader>a :ALEFix <CR>
 nnoremap <leader>t :TagbarToggle <CR>
 nnoremap <leader>u :UndotreeToggle <CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
 
+let g:ale_fixers = ['autopep8']
 
 command JSON execute ":%!python -m json.tool"
 set scrolloff=2
 nnoremap <leader>r :reg<CR>
 nnoremap <leader>h :noh<CR>
 nnoremap <leader>b :buffers<CR>
+
+nnoremap <C-w> :tabnew<CR>
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 vnoremap <Tab> > gv
 vnoremap <S-Tab> < gv
 
+nnoremap <C-q> :tabclose <CR>
+
 set nobackup
 set noswapfile
 
 let NERDTreeIgnore = ['\.pyc$', '\.class$']
+
+inoremap <C-j> <C-n>
+inoremap <C-k> <C-p>

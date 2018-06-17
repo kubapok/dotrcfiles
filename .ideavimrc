@@ -1,0 +1,7 @@
+:nnoremap <Tab> >>
+:nnoremap <S-Tab> <<
+:vnoremap <Tab> > gv
+:vnoremap <S-Tab> > gv
+
+:nnoremap \a :action ReformatCode<CR>
+:nnoremap \g :action GotoImplementation<CR>
