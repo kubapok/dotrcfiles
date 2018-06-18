@@ -153,7 +153,7 @@ cmap <f29> <nop>
 
 
 au Filetype python nnoremap <leader>g ofrom IPython import embed; embed()<esc>
-nnoremap <leader>p `[v`]
+" nnoremap <leader>p `[v`]
 nnoremap <leader>r :Autoformat <CR>
 " nnoremap <leader>a :ALEFix <CR>
 nnoremap <leader>t :TagbarToggle <CR>
@@ -164,17 +164,11 @@ let g:ale_fixers = ['autopep8']
 
 command JSON execute ":%!python -m json.tool"
 set scrolloff=2
-nnoremap <leader>r :reg<CR>
-nnoremap <leader>h :noh<CR>
-nnoremap <leader>b :buffers<CR>
 
-nnoremap <C-w> :tabnew<CR>
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
-vnoremap <Tab> > gv
-vnoremap <S-Tab> < gv
-
-nnoremap <C-q> :tabclose <CR>
+" nnoremap <Tab> >>
+" nnoremap <S-Tab> <<
+" vnoremap <Tab> > gv
+" vnoremap <S-Tab> < gv
 
 set nobackup
 set noswapfile
@@ -183,3 +177,5 @@ let NERDTreeIgnore = ['\.pyc$', '\.class$']
 
 inoremap <C-j> <C-n>
 inoremap <C-k> <C-p>
+
+nnoremap <C-a> :tabclose<CR>
