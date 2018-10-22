@@ -8,7 +8,6 @@ set statusline+=%*
 
 let g:ycm_python_binary_path = '/usr/bin/python3'
 
-
 " włącza NERDTree jeśli nie podam nazwypliku
 
 autocmd StdinReadPre * let s:std_in=1
@@ -65,15 +64,6 @@ highlight LineNr ctermfg=darkgrey
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
-" map <silent> w <Plug>CamelCaseMotion_w
-" map <silent> b <Plug>CamelCaseMotion_b
-" map <silent> e <Plug>CamelCaseMotion_e
-" map <silent> ge <Plug>CamelCaseMotion_ge
-" sunmap w
-" sunmap b
-" sunmap e
-" sunmap ge
-
 
 set clipboard=unnamedplus
 
@@ -85,21 +75,10 @@ au Filetype latex setlocal spell spelllang=pl,en_us
 " SKRÓTY KLAWISZOWE ##################################################################################
 
 
-" LEADER
-
-"STARE
-"SKAKANIE MIEDZY OKNAMI I TABAMI
-" nnoremap <S-l> gt
-" nnoremap <S-h> gT
-" nnoremap <S-k> :tabclose<CR>
-
-" nnoremap <C-j> <C-W><C-J>
-" nnoremap <C-k> <C-W><C-K>
 nnoremap <C-h> gT
 nnoremap <C-l> gt
 " nnoremap <C-k> :tabclose <CR>
 " nnoremap <C-j> :tabnew <CR>
-
 
 " pozwala się ruszać sensownie w command line vimowym
 cnoremap <c-h> <left>
@@ -165,11 +144,6 @@ let g:ale_fixers = ['autopep8']
 command JSON execute ":%!python -m json.tool"
 set scrolloff=2
 
-" nnoremap <Tab> >>
-" nnoremap <S-Tab> <<
-" vnoremap <Tab> > gv
-" vnoremap <S-Tab> < gv
-
 set nobackup
 set noswapfile
 
@@ -179,3 +153,10 @@ inoremap <C-j> <C-n>
 inoremap <C-k> <C-p>
 
 nnoremap <C-a> :tabclose<CR>
+
+
+command PrettyJson execute ":%!python -m json.tool"
+
+
+let g:ale_echo_msg_format = '%linter% says %s'
+
