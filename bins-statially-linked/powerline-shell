@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+# EASY-INSTALL-ENTRY-SCRIPT: 'powerline-shell==0.5.4','console_scripts','powerline-shell'
+__requires__ = 'powerline-shell==0.5.4'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('powerline-shell==0.5.4', 'console_scripts', 'powerline-shell')()
+    )
